@@ -41,6 +41,7 @@
   "type": "module",
   "dependencies": {
     "@floating-ui/dom": "1.6.5",
+    "@tabler/icons-svelte": "^3.5.0",
     "highlight.js": "11.9.0",
     "pocketbase": "^0.21.2",
     "svelte-pocketbase": "^0.0.4"
