@@ -5,9 +5,6 @@
 	
 	import PBHelper, { pb, authStore } from '$lib/pb';
 
-	// Import icons
-	import { IconTrash, IconPlus } from '@tabler/icons-svelte';
-
 	// Import pb
 	import type { ToastSettings } from '@skeletonlabs/skeleton';
 	import { SlideToggle } from '@skeletonlabs/skeleton';
@@ -174,7 +171,7 @@
 								<input class="checkbox" type="checkbox" checked={row.checked} on:change={(e) => PBHelper.updateChecked(row.id, !row.checked)} />
 							</td>
 							<td>
-								<button class="btn variant-filled-error" on:click={() => deleteTodo(row)}><IconTrash /></button>
+								<button class="btn variant-filled-error" on:click={() => deleteTodo(row)}>Fjern</button>
 							</td>
 						</tr>
 					{/each}
@@ -186,7 +183,7 @@
 							<input type="checkbox" class="checkbox" bind:checked={todoChecked} />
 						</td>
 						<td>
-							<button disabled={!todoTitle || todoChecked == undefined} class="btn variant-filled" on:click={createTodo}><IconPlus /></button>
+							<button disabled={!todoTitle || todoChecked == undefined} class="btn variant-filled" on:click={createTodo}>Tilføj</button>
 						</td>
 					</tr>
 				</tbody>

@@ -9,7 +9,11 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check . && eslint .",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "docker-full": "npm run docker-build && npm run docker-tag && npm run docker-push",
+    "docker-build": "cross-var docker build -t svendeproeve-pocketbase-web .",
+    "docker-tag": "cross-var docker tag svendeproeve-pocketbase-web docker.koldskl.xyz/svendeproeve-pocketbase-web:latest && cross-var docker tag svendeproeve-pocketbase-web docker.koldskl.xyz/svendeproeve-pocketbase-web:$npm_package_version",
+    "docker-push": "docker push docker.koldskl.xyz/svendeproeve-pocketbase-web:latest && cross-var docker push docker.koldskl.xyz/svendeproeve-pocketbase-web:$npm_package_version"
   },
   "devDependencies": {
     "@skeletonlabs/skeleton": "2.10.0",
@@ -41,7 +45,6 @@
   "type": "module",
   "dependencies": {
     "@floating-ui/dom": "1.6.5",
-    "@tabler/icons-svelte": "^3.5.0",
     "highlight.js": "11.9.0",
     "pocketbase": "^0.21.2",
     "svelte-pocketbase": "^0.0.4"
