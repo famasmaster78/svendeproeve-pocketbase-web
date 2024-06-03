@@ -5,9 +5,6 @@ export const load: LayoutServerLoad = async ({ params }) => {
 	
 	let nets = os.networkInterfaces();
 
-	// Log
-	console.log('nets', nets);
-
 	// Results
 	let results: Ips[] = [];
 
